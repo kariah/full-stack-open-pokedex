@@ -1,6 +1,6 @@
 name: Testing stuff
 
-# Tehtävä 11.17 Test 6
+# Tehtävä 11.17 Test 7
 
 on:
   push:
@@ -22,6 +22,11 @@ jobs:
         run: echo "$COMMITS"
       - name: commit messages
         env:
-          #COMMIT_MESSAGES: ${{ toJson(github.event.commits.*.message) }}
+          COMMIT_MESSAGES: ${{ toJson(github.event.commits.*.message) }} 
+        run: echo "$COMMIT_MESSAGES"  
+      - name: test commit messages
+        if: contains(join(toJson(github.event.commits.*.message), '#skip') }}
+        env: 
           COMMIT_MESSAGES: ${{ github.event.commits.*.message }}
         run: echo "$COMMIT_MESSAGES"  
+             echo "#skip found in commit messages"
