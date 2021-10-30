@@ -1,6 +1,6 @@
 name: Testing stuff
 
-# Tehtävä 11.17 Test 5
+# Tehtävä 11.17 Test 6
 
 on:
   push:
@@ -22,7 +22,6 @@ jobs:
         run: echo "$COMMITS"
       - name: commit messages
         env:
-          COMMIT_MESSAGES: ${{ toJson(github.event.commits.*.message) }}
-          COMMIT_MESSAGES_2: ${{ github.event.commits.*.message }}
-        run: echo "$COMMIT_MESSAGES" 
-        run: echo "$COMMIT_MESSAGES_2" 
+          #COMMIT_MESSAGES: ${{ toJson(github.event.commits.*.message) }}
+          COMMIT_MESSAGES: ${{ github.event.commits.*.message }}
+        run: echo "$COMMIT_MESSAGES"  
