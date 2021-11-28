@@ -1,6 +1,9 @@
 name: Healthchck
 
-on: push
+on:
+  push:
+    branches:
+      - master
 #https://docs.github.com/en/actions/learn-github-actions/events-that-trigger-workflows#scheduled-events
 #on: 
 #  schedule:
