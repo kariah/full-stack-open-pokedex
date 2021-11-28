@@ -1,6 +1,10 @@
 name: Healthchck
 
-on: [push, pull_request]
+#on: [push, pull_request]
+
+on:
+  schedule:
+    - cron: "30 13 * * *"
 
 jobs:
   simple_deployment_pipeline:
