@@ -1,11 +1,11 @@
 name: Healthchck
 
-on:
-  push:
-  #schedule:
+#https://docs.github.com/en/actions/learn-github-actions/events-that-trigger-workflows#scheduled-events
+on: 
+  schedule:
     # * is a special character in YAML so you have to quote this string
-  #  - cron:  '37 11 * * *'
-
+  - cron:  '0 12-13 * * *'
+  
 jobs:
   simple_deployment_pipeline:
     runs-on: ubuntu-18.04
